@@ -1,0 +1,15 @@
+# Basic .gitattributes for a python repo.
+
+# Source files
+# ============
+*.py     text diff=python
+
+# Binary files
+# ============
+*.pb     binary
+*.tar    binarny
+*.pth    binarny
+
+# Unvendor shell scripts
+# ======================
+*.sh linguist-vendored=false
