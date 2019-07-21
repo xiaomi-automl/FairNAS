@@ -12,4 +12,4 @@
 
 # Unvendor shell scripts
 # ======================
-*.sh     linguist-vendored=false
+*.sh     linguist-vendored
