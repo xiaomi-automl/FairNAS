@@ -7,9 +7,9 @@
 # Binary files
 # ============
 *.pb     binary
-*.tar    binarny
-*.pth    binarny
+*.tar    binary
+*.pth    binary
 
 # Unvendor shell scripts
 # ======================
-*.sh linguist-vendored=false
+*.sh     linguist-vendored=false
