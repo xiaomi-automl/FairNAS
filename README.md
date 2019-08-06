@@ -32,6 +32,19 @@ We have reorganized all validation images of the ILSVRC2012 ImageNet by their cl
 
 ## Evaluate
 
-```python
-python3 verify.py --model [FairNAS_A|FairNAS_B|FairNAS_C] --device [cuda|cpu] --val-dataset-root [ILSVRC2012 root path] --pretrained-path [pretrained model path]
-```
+To evaluate,
+    
+    python3 verify.py --model [FairNAS_A|FairNAS_B|FairNAS_C] --device [cuda|cpu] --val-dataset-root [ILSVRC2012 root path] --pretrained-path [pretrained model path]
+    
+
+## Citation
+
+Your kind citations are welcomed!
+
+    @article{chu2019fairnas,
+        title={FairNAS: Rethinking Evaluation Fairness of Weight Sharing Neural Architecture Search},
+        author={Chu, Xiangxiang and Zhang, Bo and Xu, Ruijun and Li, Jixiang},
+        journal={arXiv preprint arXiv:1907.01845},
+        url={https://arxiv.org/pdf/1907.01845.pdf},
+        year={2019}
+    }
