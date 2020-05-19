@@ -3,33 +3,41 @@
 
 ## Introduction
 
-we propose a novel idea called Fair Neural Architecture Search (FairNAS), in which a strict fairness constraint is enforced for fair inheritance and training. In this way, our supernet exhibits nice convergence and very high training accuracy. The performance of any sampled model loaded with shared weights from the supernet strongly correlates with that of stand-alone counterpart when trained fully. This result dramatically improves the searching efficiency, with a multi-objective reinforced evolutionary search backend, our pipeline generated a new set of state-of-the-art architectures on ImageNet: FairNAS-A attains 75.34% top-1 validation accuracy on ImageNet, FairNAS-B 75.10%, FairNAS-C 74.69%, even with lower multi-adds and/or fewer number of parameters compared with others.
+One of the most critical problems in two-stage weight-sharing neural architecture search is the evaluation of candidate models. A faithful ranking certainly leads to accurate searching results. However, current methods are prone to making misjudgments. In this paper, we prove that they inevitably give biased evaluations due to inherent unfairness in the supernet training. In view of this, we propose two levels of constraints: expectation fairness and strict fairness. Particularly, strict fairness ensures equal optimization opportunities for all choice blocks throughout the training, which neither overestimates nor underestimates their capacity. We demonstrate this is crucial to improving confidence in models’ ranking (See Figure 1). Incorporating our supernet trained under fairness constraints with a multi-objective evolutionary search algorithm, we obtain various state-of-the-art models on ImageNet. Especially, FairNAS-A attains 77.5% top-1 accuracy.
 
-The architectures of FairNAS-A,B,C are drawn below. 
+![](images/fairnas-fig-1.png)
+*Figure 1: Supernet Ranking Ability & Cost*
+
+![](images/fairnas-sampling.png)
+*Figure 2: FairNAS Supernet Training*
 
 ![](images/fairnas-architectures.png)
+*FairNAS-A,B,C Architectures*
 
 ## Requirements
 * Python 3.6 +
 * Pytorch 1.0.1 +
 
-## Discuss with us!
 
-* QQ 群名称：小米 AutoML 交流反馈
-* 群   号：702473319 (加群请填写“神经网络架构搜索”的英文简称)
 
 ## Good news! We Are Hiring (Full-time & Internship)!
 
-Hi folks! We are AutoML Team from Xiaomi AI Lab, based in Beijing, China. There are few open positions, welcome applications from new graduates and professionals skilled in Deep Learning (Vision, Speech, NLP etc.)!
+Hi folks! We are AutoML Team from Xiaomi AI Lab, based in Beijing, China. There are few open positions, welcome applications from new graduates and professionals skilled in AutoML/NAS! Please send your resume to `zhangbo11@xiaomi.com`.
 
-* Please send your resume to `zhangbo11@xiaomi.com`
 * 人工智能算法/软件工程师（含实习生）职位，简历请发送至 `zhangbo11@xiaomi.com`
+
+## Discuss with us！ 欢迎交流
+* QQ 群名称：小米 AutoML 交流反馈
+* 群   号：702473319 (加群请填写“神经网络架构搜索”的英文简称)
 
 ## Updates
 * Jul-3-2019： Model release of FairNAS-A, FairNAS-B, FairNAS-C.
+* May-19-2020：Model release of FairNAS-A-SE, FairNAS-B-SE, FairNAS-C-SE and transfered models on CIFAR-10.
 
 ## Performance Result
 ![](images/result.png)
+![](images/fairnas-cifar10.png)
+![](images/fairnas-coco.png)
 
 ## Preprocessing
 We have reorganized all validation images of the ILSVRC2012 ImageNet by their classes.
@@ -46,7 +54,34 @@ We have reorganized all validation images of the ILSVRC2012 ImageNet by their cl
 To evaluate,
     
     python3 verify.py --model [FairNAS_A|FairNAS_B|FairNAS_C] --device [cuda|cpu] --val-dataset-root [ILSVRC2012 root path] --pretrained-path [pretrained model path]
-    
+
+## Validate Transferred Model Accuracy
+
+```
+python transfer_verify.py --model [fairnas_a|fairnas_b|fairnas_c] --model-path pretrained/fairnas_[a|b|c]_transfer.pt.tar --gpu_id 0 --se-ratio 1.0 
+```
+
+Results:
+
+    FairNAS-A: flops: 414.305856M, params: 4.61373M top1: 98.15, top5: 99.98
+    FairNAS-B: flops: 370.921184M, params: 5.603242M top1: 98.08, top5: 99.99
+    FairNAS-C: flops: 345.228096M, params: 5.42953M  top1: 98.01, top5: 99.99
+
+## Validate FairNAS-SE models
+
+```
+python verify_se.py --val-dataset-root [ILSVRC2012 root path] --device cuda --model [fairnas_a|fairnas_b|fairnas_c] --model-path pretrained/fairnas_[a|b|c]_se.pth.tar 
+```
+
+Results:
+
+    FairNAS-A-SE: mTop1: 77.5480	mTop5: 93.674000
+    FairNAS-B-SE: mTop1: 77.1900	mTop5: 93.494000
+    FairNAS-C-SE: mTop1: 76.6700	mTop5: 93.258000
+    FairNAS-A-SE-0.5: mTop1: 77.3960	mTop5: 93.650000
+    FairNAS-B-SE-0.5: mTop1: 77.1060	mTop5: 93.528000
+    FairNAS-C-SE-0.5: mTop1: 76.7600	mTop5: 93.318000
+
 
 ## Citation
 
