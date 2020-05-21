@@ -9,7 +9,7 @@ import torchvision.transforms as transforms
 from torchvision import datasets
 from torchvision.datasets import CIFAR10
 
-from utils import accuracy
+from accuracy import accuracy
 from thop import profile
 from models.timm_models import Fairnas
 
