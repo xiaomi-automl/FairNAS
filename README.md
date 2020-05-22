@@ -63,9 +63,14 @@ python transfer_verify.py --model [fairnas_a|fairnas_b|fairnas_c] --model-path p
 
 Results:
 
-    FairNAS-A: flops: 414.305856M, params: 4.61373M top1: 98.15, top5: 99.98
-    FairNAS-B: flops: 370.921184M, params: 5.603242M top1: 98.08, top5: 99.99
-    FairNAS-C: flops: 345.228096M, params: 5.42953M  top1: 98.01, top5: 99.99
+
+    FairNAS-A-SE-1.0: flops: 403.36264M, params: 5.835322M, top1: 98.3, top5: 99.99
+    FairNAS-B-SE-1.0: flops: 370.921184M, params: 5.603242M top1: 98.08, top5: 99.99
+    FairNAS-C-SE-1.0: flops: 345.228096M, params: 5.42953M  top1: 98.01, top5: 99.99
+    FairNAS-A-SE-0.5: flops: 414.305856M, params: 4.61373M top1: 98.15, top5: 99.98
+    FairNAS-B-SE-0.5: flops: 358.330632M, params: 4.42485M, top1: 98.15, top5: 99.99
+    FairNAS-C-SE-0.5: flops: 333.272088M, params: 4.283586M, top1: 97.99, top5: 99.99
+
 
 ## Validate FairNAS-SE models
 

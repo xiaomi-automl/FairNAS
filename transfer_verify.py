@@ -96,4 +96,4 @@ with torch.no_grad():
 	mean_top1 = total_top1 / total_counter
 	mean_top5 = total_top5 / total_counter
 
-print('Valiate. loss: {}, top1: {}, top5: {}'.format(loss_ / (step + 1), mean_top1, mean_top5))
+print('Val. loss: {}, top1: {}, top5: {}'.format(loss_ / (step + 1), mean_top1, mean_top5))
