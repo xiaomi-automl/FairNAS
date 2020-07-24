@@ -19,17 +19,6 @@ One of the most critical problems in two-stage weight-sharing neural architectur
 * Pytorch 1.0.1 +
 
 
-
-## Good news! We Are Hiring (Full-time & Internship)!
-
-Hi folks! We are AutoML Team from Xiaomi AI Lab, based in Beijing, China. There are few open positions, welcome applications from new graduates and professionals skilled in AutoML/NAS! Please send your resume to `zhangbo11@xiaomi.com`.
-
-* 人工智能算法/软件工程师（含实习生）职位，简历请发送至 `zhangbo11@xiaomi.com`
-
-## Discuss with us！ 欢迎交流
-* QQ 群名称：小米 AutoML 交流反馈
-* 群   号：702473319 (加群请填写“神经网络架构搜索”的英文简称)
-
 ## Updates
 * Jul-3-2019： Model release of FairNAS-A, FairNAS-B, FairNAS-C.
 * May-19-2020：Model release of FairNAS-A-SE, FairNAS-B-SE, FairNAS-C-SE and transfered models on CIFAR-10.
@@ -94,7 +83,7 @@ Your kind citations are welcomed!
 
     @article{chu2019fairnas,
         title={FairNAS: Rethinking Evaluation Fairness of Weight Sharing Neural Architecture Search},
-        author={Chu, Xiangxiang and Zhang, Bo and Xu, Ruijun and Li, Jixiang},
+        author={Chu, Xiangxiang and Zhang, Bo and Xu, Ruijun},
         journal={arXiv preprint arXiv:1907.01845},
         url={https://arxiv.org/pdf/1907.01845.pdf},
         year={2019}
