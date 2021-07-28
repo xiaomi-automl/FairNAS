@@ -1,4 +1,4 @@
-# FairNAS: Rethinking Evaluation Fairness of Weight Sharing Neural Architecture Search
+# [ICCV 2021] FairNAS: Rethinking Evaluation Fairness of Weight Sharing Neural Architecture Search
 
 
 ## Introduction
@@ -81,10 +81,9 @@ Results:
 
 Your kind citations are welcomed!
 
-    @article{chu2019fairnas,
+    @inproceedings{chu2021fairnas,
         title={FairNAS: Rethinking Evaluation Fairness of Weight Sharing Neural Architecture Search},
         author={Chu, Xiangxiang and Zhang, Bo and Xu, Ruijun},
-        journal={arXiv preprint arXiv:1907.01845},
-        url={https://arxiv.org/pdf/1907.01845.pdf},
-        year={2019}
+        booktitle={International Conference on Computer Vision},
+        year={2021}
     }
